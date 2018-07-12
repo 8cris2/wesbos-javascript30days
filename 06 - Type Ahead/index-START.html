@@ -25,7 +25,7 @@
     // api => fetch
     // fetch returns a promise. It doesn't return the from the url/endpoint
     const promise = fetch(endpoint)
-      .then(blob => blob.json()) // return the data as json
+      .then(response => response.json()) // return the data as json
       .then(data => cities.push(...data))
 
     console.log(promise);

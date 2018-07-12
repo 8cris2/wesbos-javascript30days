@@ -23,10 +23,18 @@
     const cities = []; // const key word used when you don't want the values to change
 
     // api => fetch
-    // fetch returns a promise. It doesn't return the from the url/endpoint
+    // fetch returns a promise. 
+    
+    // What is a Promise
+    
+    // A promise has 3 states
+    // Pending => You don't know if you will get the data
+    // Resolved => You received the data
+    // Rejected => You did not get the data because something went wrong.
+    
     const promise = fetch(endpoint)
-      .then(response => response.json()) // return the data as json
-      .then(data => cities.push(...data))
+      .then(response => response.json()) // return the data as json.
+      .then(data => cities.push(...data)) // ...spread es6
 
     console.log(promise);
 
@@ -34,6 +42,7 @@
       return cities.filter(place => {
         // We need to figure out if the city or state matches what was searched.
         
+        // wordToMatch used in regex to match the word searched against state and city.
         const regex = new RegExp(wordToMatch, 'gi'); // g = global, i = insensitive / letter casing
         return place.city.match(regex) || place.state.match(regex);
         

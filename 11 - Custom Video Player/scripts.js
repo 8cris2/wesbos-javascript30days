@@ -100,6 +100,6 @@ progress.addEventListener('click', scrub);
 // when user moves their mouse, check the 
 // mouseDown variable, if it is true do the scrub
 progress.addEventListener('mousemove', (e) => mouseDown && scrub(e));
-progress.addEventListener('mousedown', () => mouseDOwn = true);
-progress.addEventListener('mouseup', () => mouseDOwn = false);
+progress.addEventListener('mousedown', () => mouseDown = true);
+progress.addEventListener('mouseup', () => mouseDown = false);
 fullscreen.addEventListener('click', fullScreen);
